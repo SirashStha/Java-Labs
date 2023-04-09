@@ -34,4 +34,8 @@ public class lab25 extends JFrame {
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
+
+    public static void main(String[] args) {
+        new lab25();
+    }
 }

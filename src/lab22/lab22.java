@@ -48,12 +48,9 @@ public class lab22 extends JFrame {
         // Add a list to the panel
         list = new JList<>(new String[]{"Item 1", "Item 2", "Item 3", "Item 4", "Item 5"});
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        list.addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                if (!e.getValueIsAdjusting()) {
-                    System.out.println("Selected item: " + list.getSelectedValue());
-                }
+        list.addListSelectionListener(e -> {
+            if (!e.getValueIsAdjusting()) {
+                System.out.println("Selected item: " + list.getSelectedValue());
             }
         });
         JScrollPane listScrollPane = new JScrollPane(list);
@@ -78,13 +75,10 @@ public class lab22 extends JFrame {
         rootNode.add(node2);
         DefaultTreeModel treeModel = new DefaultTreeModel(rootNode);
         tree = new JTree(treeModel);
-        tree.addTreeSelectionListener(new TreeSelectionListener() {
-            @Override
-            public void valueChanged(TreeSelectionEvent e) {
-                DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getLastSelectedPathComponent();
-                if (node == null) return;
-                System.out.println("Selected node: " + node.getUserObject());
-            }
+        tree.addTreeSelectionListener(e -> {
+            DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getLastSelectedPathComponent();
+            if (node == null) return;
+            System.out.println("Selected node: " + node.getUserObject());
         });
         JScrollPane treeScrollPane = new JScrollPane(tree);
         panel.add(treeScrollPane, BorderLayout.EAST);

@@ -1,4 +1,5 @@
 package lab21;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -36,11 +37,7 @@ public class lab21 {
         menuItem = new JMenuItem("Menu Item");
         menuItem.setMnemonic(KeyEvent.VK_I);
         menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.ALT_MASK));
-        menuItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Menu Item clicked");
-            }
-        });
+        menuItem.addActionListener(e -> JOptionPane.showMessageDialog(null, "Menu Item clicked"));
         menu.add(menuItem);
 
         menu.add(radioSubmenu);
@@ -56,7 +53,7 @@ public class lab21 {
         radioSubmenu.add(radioButtonMenuItem2);
         radioSubmenu.add(radioButtonMenuItem3);
 
-        //Create a check box menu item
+        //Create a checkbox menu item
         checkMenuItem = new JCheckBoxMenuItem("Check Box Menu Item");
         checkBoxMenuItem2 = new JCheckBoxMenuItem("Check Box Menu Item 2");
         checkBoxMenuItem3 = new JCheckBoxMenuItem("Check Box Menu Item 3");
@@ -84,16 +81,12 @@ public class lab21 {
         frame.setJMenuBar(menuBar);
 
         //Display the frame
-        frame.setSize(200,200);
+        frame.setSize(600,600);
         //frame.pack();
         frame.setVisible(true);
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new lab21();
-            }
-        });
+        SwingUtilities.invokeLater(() -> new lab21());
     }
 }

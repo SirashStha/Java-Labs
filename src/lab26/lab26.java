@@ -15,47 +15,44 @@ public class lab26 extends JFrame {
     JButton button6 = new JButton("Input");
     JButton button7 = new JButton("Option");
 
-    ActionListener actionListener = new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (e.getSource().equals(button1)) {
-                JOptionPane.showMessageDialog(lab26.this, "Simple Information Message");
-            }
+    ActionListener actionListener = e -> {
+        if (e.getSource().equals(button1)) {
+            JOptionPane.showMessageDialog(lab26.this, "Simple Information Message");
+        }
 
-            if (e.getSource().equals(button2)) {
-                JOptionPane.showMessageDialog(lab26.this,"Are You Sure?","Question",QUESTION_MESSAGE);
-            }
+        if (e.getSource().equals(button2)) {
+            JOptionPane.showMessageDialog(lab26.this,"Are You Sure?","Question",QUESTION_MESSAGE);
+        }
 
-            if (e.getSource().equals(button3)) {
-                JOptionPane.showMessageDialog(lab26.this, "Uh-Oh!","Error", ERROR_MESSAGE);
-            }
+        if (e.getSource().equals(button3)) {
+            JOptionPane.showMessageDialog(lab26.this, "Uh-Oh!","Error", ERROR_MESSAGE);
+        }
 
-            if (e.getSource().equals(button4)) {
-                JOptionPane.showMessageDialog(lab26.this, "Warning Message", "Alert", WARNING_MESSAGE);
-            }
+        if (e.getSource().equals(button4)) {
+            JOptionPane.showMessageDialog(lab26.this, "Warning Message", "Alert", WARNING_MESSAGE);
+        }
 
-            if (e.getSource().equals(button5)) {
-                JOptionPane.showConfirmDialog(lab26.this,"Do you want to continue?");
-            }
+        if (e.getSource().equals(button5)) {
+            JOptionPane.showConfirmDialog(lab26.this,"Do you want to continue?");
+        }
 
-            if (e.getSource().equals(button6)) {
-                String msg = JOptionPane.showInputDialog(lab26.this,"Anyone there?");
-                JOptionPane.showMessageDialog(lab26.this,"Hello "+msg);
-            }
+        if (e.getSource().equals(button6)) {
+            String msg = JOptionPane.showInputDialog(lab26.this,"Anyone there?");
+            JOptionPane.showMessageDialog(lab26.this,"Hello "+msg);
+        }
 
-            if (e.getSource().equals(button7)) {
-                String[] options = {"Rock", "Paper", "Scissors"};
-                var selection = JOptionPane.showOptionDialog(lab26.this, "Select one:", "Let's play a game!",
-                        0, 3, null, options, options[0]);
-                if (selection == 0) {
-                    JOptionPane.showMessageDialog(null, "You chose rock!");
-                }
-                if (selection == 1) {
-                    JOptionPane.showMessageDialog(null, "You chose paper.");
-                }
-                if (selection == 2) {
-                    JOptionPane.showMessageDialog(null, "You chose scissors!");
-                }
+        if (e.getSource().equals(button7)) {
+            String[] options = {"Rock", "Paper", "Scissors"};
+            var selection = JOptionPane.showOptionDialog(lab26.this, "Select one:", "Let's play a game!",
+                    0, 3, null, options, options[0]);
+            if (selection == 0) {
+                JOptionPane.showMessageDialog(null, "You chose rock!");
+            }
+            if (selection == 1) {
+                JOptionPane.showMessageDialog(null, "You chose paper.");
+            }
+            if (selection == 2) {
+                JOptionPane.showMessageDialog(null, "You chose scissors!");
             }
         }
     };
@@ -84,5 +81,9 @@ public class lab26 extends JFrame {
         button6.addActionListener(actionListener);
         button7.addActionListener(actionListener);
 
+    }
+
+    public static void main(String[] args) {
+        new lab26();
     }
 }

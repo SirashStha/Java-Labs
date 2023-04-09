@@ -13,7 +13,6 @@ import lab11.*;
 import lab12.*;
 import lab13.*;
 import lab14.*;
-import lab15.*;
 
 import lab23.*;
 import lab24.*;
@@ -351,8 +350,8 @@ public class Main {
 //        //Lab 15
 //        new lab15();
 
-        //Lab 23
-        new lab23();
+//        //Lab 23
+//        new lab23();
 
 //        //Lab 24
 //        new lab24();

@@ -17,29 +17,29 @@ public class lab24 extends JFrame {
         add(fileChooserButton);
         add(colorChooserButton);
 
-        fileChooserButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JFileChooser fileChooser = new JFileChooser();
-                fileChooser.setDialogTitle("Select a file");
-                fileChooser.setFileFilter(new FileNameExtensionFilter("Text Files", "txt"));
-                int returnVal = fileChooser.showOpenDialog(lab24.this);
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
-                    // do something with the selected file
-                }
+        fileChooserButton.addActionListener(e -> {
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Select a file");
+            fileChooser.setFileFilter(new FileNameExtensionFilter("Text Files", "txt"));
+            int returnVal = fileChooser.showOpenDialog(lab24.this);
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
+                // do something with the selected file
             }
         });
 
-        colorChooserButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                Color selectedColor = JColorChooser.showDialog(lab24.this, "Select a color", Color.BLACK);
-                if (selectedColor != null) {
-                    // do something with the selected color
-                }
+        colorChooserButton.addActionListener(e -> {
+            Color selectedColor = JColorChooser.showDialog(lab24.this, "Select a color", Color.BLACK);
+            if (selectedColor != null) {
+                // do something with the selected color
             }
         });
 
         setVisible(true);
         setSize(400, 200);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }
+
+    public static void main(String[] args) {
+        new lab24();
     }
 }
